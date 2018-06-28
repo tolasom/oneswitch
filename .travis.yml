@@ -7,7 +7,7 @@ addons:
     token:
       secure: "a31ad38323e0406db1ceb00d0e29a41f9ef38f82"
 jdk:
-  - oraclejdk8
+  - oraclejdk8 -X
 script:
   - sonar-scanner
 cache:
