@@ -1,0 +1,15 @@
+dist: trusty
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "tolasom-github"
+    token:
+      secure: "a31ad38323e0406db1ceb00d0e29a41f9ef38f82"
+jdk:
+  - oraclejdk8
+script:
+  - sonar-scanner
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
