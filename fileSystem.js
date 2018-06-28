@@ -35,7 +35,7 @@ const UploadSftp = new SftpUpload(sftp_config);
 module.exports.uploadFile = () =>{
     return new Promise((resolve,reject)=>{
         const hour = new Date();
-        if(hour.getHours()===11 && hour.getMinutes()===55){
+        if(hour.getHours()===11 && hour.getMinutes()===59){
         fs.readdir(FILE_PATH,(err,files)=>{
             if(err) return reject('Unnable to scan'+ err); 	
             files.forEach((file)=>{
