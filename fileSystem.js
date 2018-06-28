@@ -64,7 +64,7 @@ module.exports.getFileNameList = () =>{
         .then(()=>{
          return sftp.list(REMOTE_URL)
         .then((data)=>{
-        fileName = []
+        let fileName = []
         data.forEach((data)=>{
             fileName.push(data.name);
         })
