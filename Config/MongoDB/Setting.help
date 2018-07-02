@@ -1,3 +1,4 @@
+MongoDB Server Installation on Linux Ubuntu
 {
     "ubuntu": {
       "installation": "https://docs.mongodb.com/master/tutorial/install-mongodb-on-ubuntu/",
@@ -25,8 +26,51 @@
           "use admin",
           "db.createUser(user: \"softswitchOwner\", pwd: \"softswitchOwner\", roles: [ { role: \"dbOwner\", db: \"softswitchdb\" } ]})"
         ]
+      },
+
+      "using stage" : {
+        "Start MongoDB" : [
+          sudo service mongod start 
+        ],
+        "Verify MongoDB has started successfully" : [
+          - var/log/mongodb/mongod.log  
+        ],
+        "Stop MongoDB" : [ 
+          sudo service mongod stop 
+        ],
+        "Restart MongoDB" : [ 
+          sudo service mongod restart 
+        ],
+        "Begin using MongoDB" : [
+          {
+          "local host" : [
+            mongo --host 127.0.0.1:27017 
+              ],
+          "remote db connection" : [ 
+            mongo -u user -p pwd host:port/db 
+              ]
+          }
+        ]
+        
       }
     }
   
   }
+
+  * allowing all client to access MongoDB Server 
+  # network interfaces
+    net: 
+      port: 27017
+      bindIpAll : true
+  # enable authentication security by:
+
+    security:
+      authentication: 'enable'
+   
+  
+  
+  
+ 
+  
+    
   
